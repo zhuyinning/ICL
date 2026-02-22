@@ -1,19 +1,19 @@
 # AAAI 2024: A Twist for Graph Classification: Optimizing Causal Information Flow in Graph Neural Networks
 This repository contains code for the AAAI 2024 paper: [A Twist for Graph Classification: Optimizing Causal Information Flow in Graph Neural Networks](https://ojs.aaai.org/index.php/AAAI/article/view/29648)
 
-## Dependencies
 
-Please setup the environment following Requirements in this [repository](https://github.com/chentingpc/gfn#requirements).
-Typically, you might need to run the following commands:
+## Dependencies
+Please setup the environment with Python 3.10 and CUDA 11.8. Typically, you might need to run the following commands:
 
 ```
-pip install torch==1.13.1+cu117 torchvision==0.14.1+cu117 torchaudio==0.13.1 --extra-index-url https://download.pytorch.org/whl/cu117
-pip install torch-geometric == 2.0.2
-pip install torch-scatter  == 2.0.9
-pip install torch-sparse == 0.6.15 -f https://data.pyg.org/whl/torch-1.13.0+cu117.html
-pip install networkx                    
-pip install matplotlib  
-pip install dgl-cu101
+pip install --upgrade pip setuptools wheel
+pip install torch==2.2.2+cu118 torchvision==0.17.2+cu118 torchaudio==2.2.2+cu118 \
+--index-url https://download.pytorch.org/whl/cu118
+pip install torch-geometric
+pip install torch-scatter torch-sparse torch-cluster torch-spline-conv \
+-f https://data.pyg.org/whl/torch-2.2.0+cu118.html
+pip install dgl -f https://data.dgl.ai/wheels/cu118/repo.html
+pip install networkx matplotlib
 ```
 
 ## Experiments

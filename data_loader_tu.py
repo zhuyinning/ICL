@@ -5,10 +5,11 @@ from torch_geometric.loader import DataLoader
 def load_tu_dataset(name: str, root: str = "./data_tu"):
     dataset = TUDataset(root=root, name=name)
 
-    # Feature fallback for datasets without node features
-    for data in dataset:
+    # 强制补齐 x
+    for i in range(len(dataset)):
+        data = dataset.get(i) 
         if data.x is None:
-            data.x = torch.ones((data.num_nodes, 1))
+            data.x = torch.ones((data.num_nodes, 1), dtype=torch.float)
 
     return dataset
 

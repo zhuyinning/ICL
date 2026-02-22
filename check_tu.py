@@ -1,36 +1,26 @@
-import torch
-from torch_geometric.loader import DataLoader
-from tu_dataset import TUDatasetExt
+from data_loader_tu import load_tu_dataset, make_loader
 
 def main():
-    root = "./data_tu"   # 可以换成别的路径
-    name = "MUTAG"     
+    root = "./data_tu"
+    name = "MUTAG"
 
     print(f"[1] Loading dataset: {name} | root: {root}")
-    dataset = TUDatasetExt(root=root, name=name)
+    dataset = load_tu_dataset(name=name, root=root)
 
     print("[2] Dataset loaded.")
     print("    num_graphs =", len(dataset))
     print("    first graph =", dataset[0])
 
-    # 检查字段
-    g0 = dataset[0]
-    print("[3] Field check:")
-    print("    x:", None if g0.x is None else tuple(g0.x.shape))
-    print("    edge_index:", tuple(g0.edge_index.shape))
-    print("    y:", g0.y, "shape:", tuple(g0.y.shape))
-
-    # DataLoader 检查 batch
-    loader = DataLoader(dataset, batch_size=32, shuffle=True)
+    loader = make_loader(dataset, batch_size=32, shuffle=True)
     batch = next(iter(loader))
 
-    print("[4] Batch check:")
-    print("    batch.x:", None if batch.x is None else tuple(batch.x.shape))
+    print("[3] Batch check:")
+    print("    batch.x:", tuple(batch.x.shape))
     print("    batch.edge_index:", tuple(batch.edge_index.shape))
     print("    batch.y:", tuple(batch.y.shape))
     print("    batch.batch:", tuple(batch.batch.shape))
 
-    print("[OK] TU dataset pipeline works.")
+    print("[OK] TU dataset pipeline works (PyG official TUDataset).")
 
 if __name__ == "__main__":
     main()

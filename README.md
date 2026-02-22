@@ -7,6 +7,7 @@ Please setup the environment with Python 3.10 and CUDA 11.8. Typically, you migh
 
 ```
 pip install --upgrade pip setuptools wheel
+pip install numpy==1.26.4
 pip install torch==2.2.2+cu118 torchvision==0.17.2+cu118 torchaudio==2.2.2+cu118 \
 --index-url https://download.pytorch.org/whl/cu118
 pip install torch-geometric
@@ -51,6 +52,7 @@ journal={Proceedings of the AAAI Conference on Artificial Intelligence},
 author={Zhao, Zhe and Wang, Pengkun and Wen, Haibin and Zhang, Yudong and Zhou, Zhengyang and Wang, Yang},
 year={2024}, month={Mar.}, pages={17042-17050} }
 ```
+
 
 
 

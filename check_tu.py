@@ -1,6 +1,6 @@
 import torch
 from torch_geometric.loader import DataLoader
-from TU_dataset import TUDatasetExt
+from tu_dataset import TUDatasetExt
 
 def main():
     root = "./data_tu"   # 可以换成别的路径

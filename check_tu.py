@@ -20,7 +20,7 @@ def verify_dataset(name, root="./data_tu"):
         loader = make_loader(dataset, batch_size=32, shuffle=True)
         batch = next(iter(loader))
 
-        print("batch.x:", tuple(batch.x.shape))
+        print("batch.x:", None if batch.x is None else tuple(batch.x.shape))
         print("batch.edge_index:", tuple(batch.edge_index.shape))
         print("batch.y:", tuple(batch.y.shape))
         print("batch.batch:", tuple(batch.batch.shape))

@@ -20,10 +20,10 @@ class TUDatasetExt(InMemoryDataset):
                  pruning_percent=0):
         names = ['NCI1','MUTAG','PROTEINS','COLLAB','IMDB-MULTI', 'IMDB-BINARY', 'MNIST', 'CIFAR10']
         
-        if name  in ['NCI1','PROTEINS']:
-            self.url = 'https://ls11-www.cs.tu-dortmund.de/people/morris/graphkerneldatasets'
-        elif name in ['MUTAG','COLLAB','IMDB-MULTI', 'IMDB-BINARY']:
+        if name in ['NCI1', 'MUTAG', 'PROTEINS', 'COLLAB', 'IMDB-MULTI', 'IMDB-BINARY']:
             self.url = 'https://www.chrsmrrs.com/graphkerneldatasets'
+        elif name in ['MNIST', 'CIFAR10']:
+            self.url = 'https://data.pyg.org/datasets/benchmarking-gnns'
         elif name in ['MNIST', 'CIFAR10']:
             self.url = 'https://data.pyg.org/datasets/benchmarking-gnns'
 
